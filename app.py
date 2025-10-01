@@ -1,11 +1,12 @@
-from flask import Flask
+import random
 
-app = Flask(__name__)
+messages = [
+    "Salam DevOps 👋",
+    "Yeni versiya gəldi 🚀",
+    "Docker + Kubernetes = ❤️",
+    "CI/CD işlədi 🔥",
+]
 
 @app.route('/')
 def hello():
-    return "YENI VERSIYA"
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    return random.choice(messages)
